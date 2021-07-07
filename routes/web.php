@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\AnswersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Redirect to Questions controller
+Route::get('/', [QuestionsController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// CREATE new question
+Route::post('/questions/add',[QuestionsController::class, 'add']); 
+
+// Read question by Id
+Route::get('/questions/{question_id}', [QuestionsController::class, 'question']); 
+ 
+// CREATE answer for question by Id
+Route::post('/questions/{question_id}/answer', [AnswersController::class, 'add']);
