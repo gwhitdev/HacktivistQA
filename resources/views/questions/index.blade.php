@@ -8,7 +8,7 @@
                     <div class="form-group">
                         {{ csrf_field() }}
                             <textarea name="statement" class="form-control"id="question">{{old('statement')}}</textarea>
-                        
+                            <div class="text-danger">{{$errors->question->first('statement')}} </div>
                     </div>
                     <div class="mt-3" style="text-align:right!important">
                         <button class="btn btn-primary">Ask</button>
