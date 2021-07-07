@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Question;
-use App\Modes\Answer;
+use App\Models\Answer;
 
 class QuestionsController extends Controller
 {
