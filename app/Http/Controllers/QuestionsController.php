@@ -11,7 +11,6 @@ class QuestionsController extends Controller
     public function index()
        {
             $questions = Question::reorder('id','desc')->get();
-            
             return view('questions/index',['questions'=>$questions]);
        }
        
