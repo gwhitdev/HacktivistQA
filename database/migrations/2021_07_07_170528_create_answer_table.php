@@ -15,6 +15,7 @@ class CreateAnswerTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
+            $table->text('answer_text');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateAnswerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('answer');
+        Schema::dropIfExists('answers');
     }
 }
