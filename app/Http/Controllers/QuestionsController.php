@@ -16,14 +16,13 @@ class QuestionsController extends Controller
        
      public function validateQuestion(Request $request)
      {
-          $validated = $request->validateWithBag('question',[
+         return $request->validateWithBag('question',[
                'statement' => 'required|min:5|ends_with:?'
           ],[
                'statement.required' => 'You must write something to submit a question.',
                'statement.min' => 'Your question must be at least 5 characters long.',
                'statement.ends_with' => 'Your question must finish with a question mark (?).'
           ]);
-          return $validated;
      }
      public function add(Request $request)
        {
